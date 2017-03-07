@@ -1,0 +1,76 @@
+const Header = () => (
+  <header>
+    <h1 className='text-center title-text'>
+      Markdown Previewer
+    </h1>
+    <h4 className='text-center title-text'>created for FreeCodeCamp</h4>
+  </header>
+);
+
+
+class FCCMarkdown extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      converter: new showdown.Converter(),
+      value: `Markdown Previewer\n===\n<br> \n## This markdown previewer has been created for FreeCodeCamp\n<br>\n Use the editBox on the left to write your markdown and see the HTML version on the right output pane (below if on mobile)`,
+    };
+  }
+
+  createMarkup() {
+    return {__html: this.state.converter.makeHtml(this.state.value) };
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  render() {
+    return (<div className='row'>
+              <div className='col-sm-6'>
+                <textarea
+                  type='text'
+                  defaultValue={this.state.value}
+                  onChange={this.handleChange.bind(this)}
+                  id='editArea'
+                  className='col-xs-10 col-xs-offset-1 full-height'></textarea>
+              </div>
+              <div className='col-sm-6'>
+                <div id='outputArea'
+                     className='col-xs-10 col-xs-offset-1 full-height'>
+                  <div dangerouslySetInnerHTML={this.createMarkup()} />
+                </div>
+              </div>
+            </div>);
+  }
+};
+
+const Footer = () => (
+  <footer>
+     <div className="container-fluid text-center">
+        <div className="text-center text-muted footer-text">
+           <h4>Created by Sérgio Gaspar for freeCodeCamp Challenge: <a href="https://www.freecodecamp.com/challenges/build-a-markdown-previewer" target="_blank">Markdown Previewer</a>.</h4>
+           <br/>
+          <h4> created using  <img src='http://blog-assets.risingstack.com/2016/Jan/react_best_practices-1453211146748.png' width='100'/> </h4>
+        </div>
+        <div className="social-icons">
+           <a href="http://www.sergiomgaspar.com" target="_blank"><i id="github" className="fa fa-user-circle" aria-hidden="true"></i></a>
+           <a href="https://github.com/sergiomgaspar" target="_blank"><i id="github" className="fa fa-github" aria-hidden="true"></i></a>
+           <a href="http://codepen.io/sergiomgaspar/" target="_blank"><i id="codepen" className="fa fa-codepen" aria-hidden="true"></i></a>
+           <a href="https://www.freecodecamp.com/sergiomgaspar" target="_blank"><i id="freecodecamp" className="fa fa-free-code-camp" aria-hidden="true"></i></a>
+           <a href="https://www.linkedin.com/in/sergiomgaspar" target="_blank"><i id="linkedin" className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </div>
+     </div>
+  </footer>
+);
+const App = () => (
+  <div className='container-fluid'>
+    <Header/>
+    <FCCMarkdown/>
+    <Footer/>
+  </div>
+);
+
+document.write('<div id="app"></div>');
+ReactDOM.render(<App/>, document.getElementById('app'));
+

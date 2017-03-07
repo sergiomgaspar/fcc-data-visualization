@@ -1,0 +1,73 @@
+$background: #333333;
+$editColor: #FFF;
+$titleColor: #4183c4;
+
+body, #editArea, #outputArea{
+  background: $background;
+}
+
+.title-text {
+  color: $titleColor;
+  margin-top: 20px;
+}
+
+#editArea{
+  background: $editColor;
+  font-family: monospace;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  padding: 25px 30px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 100%;
+}
+  
+#outputArea {
+  background: $editColor;
+  overflow: auto;
+  padding: 1px 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.full-height {
+  height: 90vh
+}
+
+.footer {
+  text-align: center;
+  border-top: 3px outset #444;
+  font-size: 10px;
+  font-weight: normal;
+  margin-top: 7em;
+  min-width: 320px;
+  padding: 1em 1em 0 1em;
+  width: 100%;
+  bottom: 0;
+ 
+}
+
+.social-icons{
+    margin-top: 10px;
+      a{
+      font-size: 30px;
+      margin: 5px;
+      
+        i{
+          &:hover {
+            color: lighten(#4183c4, 15%);
+          }
+        }
+      }
+  }
+
+.footer-text {
+  h4{
+    font-size: 16px;
+  }
+}
