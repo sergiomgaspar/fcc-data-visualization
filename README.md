@@ -1,10 +1,10 @@
-# Repo for the FreeCodeCamp Data Visualization exercices
+# Repo for the FreeCodeCamp Data Visualization exercises
 
 FCC Data Visualization is a module of the FreeCodeCamp curriculum
 
-### Exercices 
+### exercises 
 
-Below is a list of exercices and their status of completion
+Below is a list of exercises and their status of completion
 
   - **Build a Markdown Previewer:** (done) 07/03/2017
   - **Build a Camper Leaderboard:** TBD
